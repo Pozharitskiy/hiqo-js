@@ -1,6 +1,5 @@
 function callWhileStringIsNotEmpty(string, func) {
     let value = string;
-    counter = value.length;
     const recursion = (value) => {
 
         if (value.length === 0) {
@@ -10,6 +9,12 @@ function callWhileStringIsNotEmpty(string, func) {
             return recursion(value.slice(0, -1));
         }
     }
+
+    //SHORTER
+    /*const recursion = (value) => {
+        value.length === 0 ? null : func(value), recursion(value.slice(0, -1));
+            } */
+
     recursion(value);
 }
 function consoleLog(value) {
