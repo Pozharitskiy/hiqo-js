@@ -1,7 +1,7 @@
 function summ() {
     let currentSum = 0;
-    for (let i = 0; i < arguments.length - 1; i++) {
-        currentSum += +arguments[i];
+    for (let i = 0; i < arguments.length; i++) {
+        +arguments[i] ? currentSum += +arguments[i] : null;
     }
     console.log(currentSum);
 }

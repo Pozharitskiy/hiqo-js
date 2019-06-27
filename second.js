@@ -1,18 +1,17 @@
 function summAdvanced() {
-    let currentSum = 0;
+    let sum = 0;
     for (let i = 0; i < arguments.length; i++) {
-        console.log(arguments[i]);
-        if (!isNaN(+arguments[i])) {
-            currentSum += +arguments[i];
-        } else if (typeof (arguments[i]) === "function") {
-            let executeFunc = arguments[i]();
-            currentSum += executeFunc;
+        const arg = arguments[i];
+        const isFunction = typeof (arg) === 'function';
+        const argValue = isFunction ? arg() : arg;
+        const argNumberValue = Number(argValue);
+        if (argNumberValue) {
+            sum += argNumberValue;
         }
     }
-    console.log(currentSum);
+    console.log(sum);
 }
-summAdvanced('abc', 1, '2', getTen, getTenString, getRandomNumber); // => 1 + 2 + 10 + 10 + randow value, 'abc' should be ignored. Result should have type Number
-
+summAdvanced('abc', 1, '2', getTen, getTenString, getRandomNumber);
 function getRandomNumber() {
     return Math.random();
 }
