@@ -1,5 +1,5 @@
 function find(array, foo) {
-    console.log(array.filter(foo));
+    return array.filter(foo);
 }
 
 const users = [

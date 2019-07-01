@@ -1,5 +1,4 @@
 function flattenDeep(array) {
-    // TODO: implement function
     const lifehack = array.toString().split(",").map(Number);
     console.log(lifehack);
 }

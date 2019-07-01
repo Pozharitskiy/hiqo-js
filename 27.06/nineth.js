@@ -1,18 +1,13 @@
 function groupBy(array, foo) {
-    const map = new Map();
-    array.forEach((item) => {
-        const key = foo(item);
-        const collection = map.get(key);
-        if (!collection) {
-            map.set(key, [item]);
-        } else {
-            collection.push(item);
-        }
-    });
-    return map;
+    var result = array.reduce((elem, currentValue) => {
+        (elem[foo(currentValue)] = elem[foo(currentValue)] || []).push(currentValue);
+        return elem;
+    }, {});
+
+    console.log(result);
+    return result;
 }
 
-/*idk how to solve that for myself, i just took that code from the web*/
 
 groupBy(['one', 'two', 'three'], (element) => element.length);
 
