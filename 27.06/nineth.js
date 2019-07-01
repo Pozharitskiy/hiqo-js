@@ -1,6 +1,9 @@
 function groupBy(array, foo) {
-    var result = array.reduce((elem, currentValue) => {
-        (elem[foo(currentValue)] = elem[foo(currentValue)] || []).push(currentValue);
+    const result = array.reduce((elem, currentValue) => {
+        elem[foo(currentValue)] = elem[foo(currentValue)] || [];
+        if (elem[foo(currentValue)] || []) {
+            elem[foo(currentValue)].push(currentValue);
+        }
         return elem;
     }, {});
 

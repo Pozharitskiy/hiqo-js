@@ -1,7 +1,7 @@
 function chunk(arr, value) {
-    let array1 = arr.slice(0, value);
-    let array2 = arr.slice(value, arr.length);
-    let container = [];
+    const array1 = arr.slice(0, value);
+    const array2 = arr.slice(value, arr.length);
+    const container = [];
     container.push(array1, array2);
     console.log(container);
 }
