@@ -1,5 +1,5 @@
 function every(obj, foo) {
-    console.log(obj.every(foo));
+    return obj.every(foo);
 }
 
 const users = [
