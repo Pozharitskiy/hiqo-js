@@ -1,9 +1,9 @@
 function isEqual(ob1, ob2) {
    /*Of course :)*/
-   const string1 = JSON.stringify(ob1);
-   const string2 = JSON.stringify(ob2);
+   const string1 = JSON.stringify(ob1).replace(/[.,\/#!$%\^&\'"\*;:{}=\-_`~()]/g, "");
+   const string2 = JSON.stringify(ob2).replace(/[.,\/#!$%\^&\'"\*;:{}=\-_`~()]/g, "");
    //Let's split two strings and filter new big string
-   const twoStrings = (string1 + string2).replace(/[.,\/#!$%\^&\'"\*;:{}=\-_`~()]/g, "");
+   const twoStrings = (string1 + string2);
    const mas = twoStrings.split('');
    //now we have an array from our big string
    console.log(twoStrings);
@@ -18,16 +18,26 @@ function isEqual(ob1, ob2) {
    const isTwo = (el) => {
       return (el === 2);
    }
-   (values.every(isTwo) ? console.log(true) : console.log(false))
+   //checking different orders and nesting levels
+   if (values.every(isTwo)) {
+      console.log(true)
+   } else {
+      if (string1 === string2) {
+         console.log(true)
+      } else {
+         console.log(false);
+      }
+   }
+
 }
 
 const object1 = {
    a: 1,
    b: {
-      c: 3,
-      d: {
+      c: {
          e: 5,
-      }
+      },
+      d: 3,
    }
 };
 const object2 = {
