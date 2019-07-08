@@ -12,6 +12,17 @@ curry = function (fn) {
     }
 }
 
+/*BIND USAGE*/
+/*
+!!! TIP:arrow functions lost context =( !!!
+function curry(fn) {
+  return function binding() {
+    return (arguments.length < fn.length) ?
+      binding.bind(this, ...arguments) : fn.call(this, ...arguments);
+  }
+}
+*/
+
 function summ1(a, b, c) {
     return a + b + c;
 }
