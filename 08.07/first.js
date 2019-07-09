@@ -1,11 +1,18 @@
 function createObject(obj) {
-    for (let key in obj) {
-        if (typeof (obj[key]) === 'function') {
-            obj[key] = obj[key].bind(obj);
+    // for (let key in obj) {
+    //     if (typeof (obj[key]) === 'function') {
+    //         obj[key] = obj[key].bind(obj);
+    //     }
+    // }
+    /* Solution with Object.entries */
+    for (let [key, value] of Object.entries(obj)) {
+        if (typeof (value) === 'function') {
+            obj[key] = value.bind(obj);
         }
     }
     return obj;
 }
+
 
 // Expected result
 
