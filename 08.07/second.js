@@ -1,7 +1,6 @@
 function Collection(constructor) {
     this.collectionArray = [];
     let gotItem, newArr;
-    console.log(this.constructor.arguments[0])
     this.readAll = function () {
         console.log(this.collectionArray);
         return this.collectionArray;
