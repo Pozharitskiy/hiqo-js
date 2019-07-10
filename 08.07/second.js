@@ -1,19 +1,20 @@
 function Collection(constructor) {
     this.collectionArray = [];
     let gotItem, newArr;
+    console.log(this.constructor.arguments[0])
     this.readAll = function () {
         console.log(this.collectionArray);
         return this.collectionArray;
     }
-
-    this.add = function (itemId, itemName) {
-        this.collectionArray.push(Object.seal(new constructor(itemId, itemName)));
+    this.add = function (...args) {
+        this.collectionArray.push(Object.seal(new constructor(...args)));
         return this.collectionArray;
     }
 
     this.get = function (foo) {
         this.gotItem = this.collectionArray.find(foo);
         console.log(this.gotItem);
+
 
         this.update = function (updateFunc) {
             updateFunc(this.gotItem);
