@@ -8,6 +8,7 @@ function Collection(constructor) {
 
     this.add = function (itemId, itemName) {
         this.collectionArray.push(Object.seal(new constructor(itemId, itemName)));
+        return this.collectionArray;
     }
 
     this.get = function (foo) {
@@ -24,11 +25,13 @@ function Collection(constructor) {
             let positionOfItem = this.collectionArray.indexOf(this.gotItem);
 
             this.collectionArray.splice(0, ++positionOfItem);
-            console.log(this.collectionArray)
+            console.log(this.collectionArray);
+            return this.collectionArray;
         }
 
         this.read = function () {
-            console.log(this.gotItem)
+            console.log(this.gotItem);
+            return this.gotItem;
         }
 
         return this;
