@@ -15,9 +15,3 @@ function memoize(fn) {
 }
 
 // Expected result
-
-function summ(a, b, c) {
-    return a + b + c;
-}
-
-const memoizedSumm = memoize(summ);
